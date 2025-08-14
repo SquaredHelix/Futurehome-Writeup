@@ -139,3 +139,14 @@ Here are some of the information I have been able to research about the special 
 
 * ### fhbutler
     Description: "Hub administration software"
+
+    This appears to be a tool possibly for remotely issuing commands, diagnostics etc. From the config file we can find this:
+    ```
+    "niflheim": {
+		"grpc_host": {
+			"prod": "niflheim.futurehome.io:9000",
+			"beta": "niflheim-beta.futurehome.io:9000"
+		}
+	}
+    ```
+    If I had to guess, these gRPC servers might be telling the hub when to update. However I would imagine the actual update files are pulled from the futurehome deb repository, not transfered over this.
