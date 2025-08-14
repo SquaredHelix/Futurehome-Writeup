@@ -73,7 +73,7 @@ I have not explored this yet as my second-hand device already had FIMP installed
 
 In order to reset you navigate to ```/opt/fimpui```, and if the folder ```/opt/fimpui/data``` exists then delete all contents inside of it and copy ```/opt/fimpui/defaults/config.json``` to ```/opt/fimpui/data/config.json```. Run ```systemctl restart fimpui``` to restart the service.
 
-The Thingiplex/FIMPUI web interface can now be viewed at port 8081 in a browser. The design of this interface is not great, but functionally it seems to work.
+The Thingsplex/FIMPUI web interface can now be viewed at port 8081 in a browser. The design of this interface is not great, but functionally it seems to work.
 
 Here is a zigbee smart plug that is paired from Thingsplex, appearing in the app. This demonstrates that devices should be available through this local interface.
 
