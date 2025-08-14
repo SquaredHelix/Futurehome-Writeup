@@ -96,3 +96,46 @@ This is very interesting, but I still assume these integrations talk to futureho
 The hub has a hidden homekit integration that can not be installed through the app. Instead it can be installed by typing ```sudo apt install homekit``` to download it from the futurehome repository. I think this integration is unfinished as I can only make it control the modes (home/away/sleep/vacation), but not individual devices.
 
 The homekit pairing pin (8-digit) can be extracted from the location ```/var/lib/futurehome/homekit/pin```.
+
+---
+
+### Service notes
+Here are some of the information I have been able to research about the special services that run on the device
+
+* ### cloud-bridge
+    Description: "MQTT Cloud bridge bridges local MQTT broker with cloud IoT services like AWS IoT"
+    
+    This seems to be what connects the hub to the futurehome app, and the only thing that appears to have an established internet connection at all times. This might be all that is required to disable remote management, however there may still be polling done at longer intervals. More monitoring is required to know for sure that this is all we need to disable.
+
+    In this case we can disable it with
+    ```systemctl disable --now cloud-bridge```
+
+* ### vinculum
+    Description: "Futurehome core software"
+
+* ### mosquitto
+    Description: "MQTT Logger for Futurehome"
+
+* ### ecollector
+    Description: "Event collector service.futurehome"
+
+* ### tpflow
+    Description: "Thingplex TpFlow is IoT rule and flow engine"
+
+* ### energy-guard
+    Description: "Energy Guard is a service responsible for monitoring and managing energy consumption to limit costs"
+
+* ### fhtunnel
+    Description: "Allows SSH access to the hub from cloud SSH tunnel"
+
+* ### device-monitor
+    Description: "Monitors device connectivity and health"
+
+* ### kind-owl
+    Description: "Smarthub notification dispatcher. Sends notification to CloudBridge"
+
+* ### angrydog
+    Description: "Device monitoring application that runs on the hub to capture all events and alarms and takes necessary action! futurehome"
+
+* ### fhbutler
+    Description: "Hub administration software"
