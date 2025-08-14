@@ -89,3 +89,10 @@ One example is the [tibber](https://github.com/tskaard/fh-tibber/) integration. 
 This is very interesting, but I still assume these integrations talk to futurehome servers for the installation process.
 
 <img src="CUBE 1V1-EU/assets/tibber.png" alt="Tibber integration" height="700">
+
+---
+
+### Homekit
+The hub has a hidden homekit integration that can not be installed through the app. Instead it can be installed by typing ```sudo apt install homekit``` to download it from the futurehome repository. I think this integration is unfinished as I can only make it control the modes (home/away/sleep/vacation), but not individual devices.
+
+The homekit pairing pin (8-digit) can be extracted from the location ```/var/lib/futurehome/homekit/pin```.
