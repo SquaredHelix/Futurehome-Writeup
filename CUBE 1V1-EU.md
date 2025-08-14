@@ -73,9 +73,9 @@ I have not explored this yet as my second-hand device already had FIMP installed
 
 In order to reset you navigate to ```/opt/fimpui```, and if the folder ```/opt/fimpui/data``` exists then delete all contents inside of it and copy ```/opt/fimpui/defaults/config.json``` to ```/opt/fimpui/data/config.json```. Run ```systemctl restart fimpui``` to restart the service.
 
-The Thingsplex/FIMPUI web interface can now be viewed at port 8081 in a browser. The design of this interface is not great, but functionally it seems to work.
+The Thingsplex/FIMPUI web interface can now be viewed at port 8081 in a browser. The design of this interface is not great, but functionally it seems to do what it needs.
 
-Here is a zigbee smart plug that is paired from Thingsplex, appearing in the app. This demonstrates that devices should be available through this local interface.
+Here is a zigbee smart plug that is paired from Thingsplex, appearing in the app. This demonstrates that hub paired devices should be available through this local interface. I am also able to control the state of this smart plug.
 
 <img src="CUBE 1V1-EU/assets/zigbee_adapters.png" alt="Thingsplex" height="300">
 <img src="CUBE 1V1-EU/assets/futurehome_app.jpg" alt="Futurehome app" height="300">
@@ -86,6 +86,6 @@ Here is a zigbee smart plug that is paired from Thingsplex, appearing in the app
 I want to fully disable updates to the hub, we could directly block internet access but some integrations might require internet.
 One example is the [tibber](https://github.com/tskaard/fh-tibber/) integration. It appears to interface directly with the Tibber API, however the access token might be generated through the app? Integrations seem to be possible to install through local Thingsplex as well, and parameters such as tokens can be configured there.
 
-This is very interesting, but I still assume these talk to futurehome servers for the installation process.
+This is very interesting, but I still assume these integrations talk to futurehome servers for the installation process.
 
 <img src="CUBE 1V1-EU/assets/tibber.png" alt="Tibber integration" height="700">
